@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience - Kenjee Polanco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="exp-container">
+      <h1>Experience</h1>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">
+            <strong>IT Support Specialist</strong> • Teaneck Cinemas • Teaneck, NJ • 2019 - Present
+          </div>
+          <img src="images/teaneck-logo.jpg" alt="Teaneck Cinemas Logo" class="exp-logo">
+        </div>
+        <div class="achievement-list">
+          <div class="achievement">Spearheaded day-to-day IT and operations for a 500+ seat movie theater, ensuring seamless guest experiences and minimal system downtime.</div>
+          <div class="achievement">Designed dynamic employee schedules and film lineups, balancing labor budgets with ticket demand and customer flow.</div>
+          <div class="achievement">Led onboarding and training of new staff on system tools and operational procedures, improving productivity and reducing errors.</div>
+          <div class="achievement">Diagnosed and resolved software, networking, and hardware issues involving RTS and GDC proprietary systems to avoid revenue disruption.</div>
+          <div class="achievement">Managed vendor relationships and oversaw inventory systems, optimizing stock levels and saving costs through proactive ordering.</div>
+          <div class="achievement">Directed high-traffic event operations, successfully managing patron flow and coordinating AV systems for special screenings.</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">
+            <strong>Field Technician – Event Operations</strong> • Asphalt Hoops • Based in Teaneck, NJ • 2021 - Present
+          </div>
+          <img src="images/asphalt-logo.jpg" alt="Asphalt Hoops Logo" class="exp-logo">
+        </div>
+        <div class="achievement-list">
+          <div class="achievement">Provided hands-on technical setup, calibration, and maintenance for laptops, POS systems, routers, PA systems, digital scoreboards, and monitors at regional sports tournaments.</div>
+          <div class="achievement">Trained referees and operators to handle basic system issues independently, reducing support calls by 40%.</div>
+          <div class="achievement">Delivered on-site and remote IT and AV support, resolving real-time hardware or connection failures with minimal game delay.</div>
+          <div class="achievement">Introduced standardized tech setup protocols that reduced average setup time by 25%.</div>
+          <div class="achievement">Partnered with event managers to enhance system reliability across multiple venues and contributed to consistently smooth tournament execution.</div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px"><a class="back-home" href="index.html">← Back to homepage</a></p>
+    </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </main>
+  <script>
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('pref-theme') || 'dark';
+      function apply(t){
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('pref-theme', t);
+        btn.textContent = t === 'dark' ? '🌙' : '☀️';
+      }
+      apply(saved);
+      btn.addEventListener('click', ()=> apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    })();
+  </script>
+</body>
+</html>

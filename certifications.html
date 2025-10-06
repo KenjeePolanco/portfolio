@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certifications - Kenjee Polanco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="cert-container">
+      <h1>Certifications</h1>
+      
+      <div class="cert-item">
+        <span class="cert-text">CompTIA A+ 1201 — <strong>Complete</strong></span>
+        <img src="images/comptia-logo.jpg" alt="CompTIA Logo" class="cert-logo">
+      </div>
+      
+      <div class="cert-item">
+        <span class="cert-text">CompTIA A+ 1202 — <strong>In progress</strong></span>
+        <img src="images/comptia-logo2.jpg" alt="CompTIA Logo" class="cert-logo">
+      </div>
+      
+      <div class="cert-item">
+        <span class="cert-text">Microsoft MCP-900 — <strong>In progress</strong></span>
+        <img src="images/mcp-logo.jpg" alt="Microsoft Logo" class="cert-logo">
+      </div>
+      
+      <p style="margin-top:18px"><a class="back-home" href="index.html">← Back to homepage</a></p>
+    </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </main>
+  <script>
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('pref-theme') || 'dark';
+      function apply(t){
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('pref-theme', t);
+        btn.textContent = t === 'dark' ? '🌙' : '☀️';
+      }
+      apply(saved);
+      btn.addEventListener('click', ()=> apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Kenjee Polanco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="about-container">
+      <h1>About Me</h1>
+      
+      <!-- Profile Photo Section -->
+      <div class="profile-photo-container">
+        <img src="images/profile-photo.jpg" alt="Kenjee Polanco - Professional Photo" class="profile-photo" />
+      </div>
+      
+      <p class="about-desc" id="about-desc">👋 Hi, I'm <strong>Kenjee Polanco</strong>. I'm a Computer Science graduate with valuable hands-on experience as an IT Support Specialist at Teaneck Cinemas and freelance Field Technician for Asphalt Hoops in Teaneck, NJ. While I've gained excellent foundational experience in my current role, I'm now seeking new opportunities in IT that will allow me to expand my technical expertise and take on more challenging responsibilities. I'm eager to bring my proven problem-solving skills, technical knowledge, and professional dedication to a dynamic IT environment.</p>
+
+      <h2>🛠️ Technical Skills & Tools</h2>
+      <ul class="about-desc" style="text-align:left; display:inline-block; margin-top:6px;">
+        <li>Web Development – HTML, CSS, Python</li>
+        <li>Database Management – SQL (MySQL, SQLite)</li>
+        <li>Troubleshooting & Support – Diagnosing hardware/software issues and ticket handling</li>
+        <li>Operations Optimization – Improving workflows in high-traffic environments</li>
+        <li>Automation & Scripting – Writing Python tools for task automation</li>
+        <li>System Administration – Windows/Linux environments, network configuration, and security protocols</li>
+        <li>IT Infrastructure & Fundamentals – CompTIA A+ certified knowledge in hardware, networking, and enterprise support</li>
+        <li>Enterprise Tools & Platforms – Active Directory, ServiceNow, Jira for user management and ticketing systems</li>
+        <li>AI & Machine Learning – Prompt engineering, AI-assisted development, and automation tools integration</li>
+        <li>Version Control – Git & GitHub</li>
+      </ul>
+
+      <h2>💡 About Me</h2>
+      <p class="about-desc">I'm passionate about leveraging technology to improve everyday experiences and solve real-world challenges. I bring a hands-on mindset, operational awareness, and a problem-solving focus to every role.</p>
+
+      <h2>🎯 Outside of Work</h2>
+      <p class="about-desc">🏀 Playing basketball · 🎮 Gaming · 🍿 Watching sports, movies, and shows · 👕 Designing clothing and creating</p>
+
+      <p class="about-desc">📫 Let’s connect and explore opportunities to collaborate — I'm eager to bring my skills to a growing team and continue learning in the IT and tech space.</p>
+  <p style="margin-top:18px"><a class="back-home" href="index.html">← Back to homepage</a></p>
+    </div>
+  </main>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('pref-theme') || 'dark';
+      function apply(t){
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('pref-theme', t);
+        btn.textContent = t === 'dark' ? '🌙' : '☀️';
+      }
+      apply(saved);
+      btn.addEventListener('click', ()=> apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    })();
+  </script>
+</body>
+</html>

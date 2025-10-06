@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills - Kenjee Polanco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <!-- Skills Logo Grid -->
+    <div class="skills-logos-grid">
+      <img src="images/activedirectory-logo.jpg" alt="Active Directory" class="skill-logo">
+      <img src="images/commandline-logo.jpg" alt="Command Line" class="skill-logo">
+      <img src="images/css-logo.jpg" alt="CSS" class="skill-logo">
+      <img src="images/excel-logo.jpg" alt="Excel" class="skill-logo">
+      <img src="images/honeybook-logo.jpg" alt="HoneyBook" class="skill-logo">
+      <img src="images/html5-logo.jpg" alt="HTML5" class="skill-logo">
+      <img src="images/jira-logo.jpg" alt="Jira" class="skill-logo">
+      <img src="images/linux-logo.jpg" alt="Linux" class="skill-logo">
+      <img src="images/mac-logo.jpg" alt="macOS" class="skill-logo">
+      <img src="images/photoshop-logo.jpg" alt="Photoshop" class="skill-logo">
+      <img src="images/powerpoint-logo.jpg" alt="PowerPoint" class="skill-logo">
+      <img src="images/python-logo.jpg" alt="Python" class="skill-logo">
+      <img src="images/remotepc-logo.jpg" alt="RemotePC" class="skill-logo">
+      <img src="images/servicenow-logo.jpg" alt="ServiceNow" class="skill-logo">
+      <img src="images/sql-logo.jpg" alt="SQL" class="skill-logo">
+      <img src="images/windows-logo.jpg" alt="Windows" class="skill-logo">
+    </div>
+
+    <div class="skills-container">
+      <h1>Skills</h1>
+
+      <div class="skills-list">
+        <div class="skills-section"><strong>IT Support / Troubleshooting & Operations</strong><br>Technical Support • Hardware & Software Troubleshooting • Remote Support Tools • POS Systems • Ticketing Systems (Familiar) • Documentation & Reporting • IT Asset Management • Inventory Management</div>
+
+        <div class="skills-section"><strong>Systems & Networking</strong><br>Operating Systems (Windows, macOS) • Command Line • Active Directory • Basic Networking (IP, DNS, DHCP) • Cybersecurity Awareness</div>
+
+        <div class="skills-section"><strong>Programming & Tools</strong><br>Python • HTML • SQL • Microsoft Excel • Google Workspace • SaaS Configuration and Management</div>
+
+        <div class="skills-section"><strong>Professional Skills</strong><br>Customer Service • Time Management • Leadership • Operations Management • Payroll Processing</div>
+      </div>
+
+      <p style="margin-top:18px"><a class="back-home" href="index.html">← Back to homepage</a></p>
+    </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </main>
+  <script>
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('pref-theme') || 'dark';
+      function apply(t){
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('pref-theme', t);
+        btn.textContent = t === 'dark' ? '🌙' : '☀️';
+      }
+      apply(saved);
+      btn.addEventListener('click', ()=> apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    })();
+
+
+  </script>
+</body>
+</html>

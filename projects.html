@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Kenjee Polanco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="projects-container">
+      <h1>Projects</h1>
+      <div class="project-downloads">
+        <a href="PC-Troubleshoot-Guide.zip" class="download-button" download="PC-Troubleshoot-Guide.zip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+          </svg>
+          PC Troubleshoot Guide Website
+        </a>
+        <a href="PC-Disassembly-Reassembly.zip" class="download-button" download="PC-Disassembly-Reassembly.zip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+          </svg>
+          PC Disassembly & Reassembly Presentation
+        </a>
+      </div>
+      <p style="margin-top:18px"><a class="back-home" href="index.html">← Back to homepage</a></p>
+    </div>
+  </main>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  <script>
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('pref-theme') || 'dark';
+      function apply(t){
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('pref-theme', t);
+        btn.textContent = t === 'dark' ? '🌙' : '☀️';
+      }
+      apply(saved);
+      btn.addEventListener('click', ()=> apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    })();
+  </script>
+</body>
+</html>

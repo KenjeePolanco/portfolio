@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education - Kenjee Polanco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="edu-container">
+      <h1>Education</h1>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-content">
+            <strong>Montclair State University</strong><br>
+            <strong>Bachelor of Science in Computer Science</strong><br>
+            <em>September 2022 - January 2025</em><br>
+            Montclair, NJ
+          </div>
+          <img src="images/msu-logo.jpg" alt="Montclair State University Logo" class="edu-logo">
+        </div>
+        <div class="edu-item">
+          <div class="edu-content">
+            <strong>Bergen Community College</strong><br>
+            <strong>Associate of Science in Liberal Arts and Sciences</strong><br>
+            <em>September 2019 - May 2022</em><br>
+            Paramus, NJ
+          </div>
+          <img src="images/bcc-logo.jpg" alt="Bergen Community College Logo" class="edu-logo">
+        </div>
+      </div>
+  <p style="margin-top:18px"><a class="back-home" href="index.html">← Back to homepage</a></p>
+    </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </main>
+  <script>
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('pref-theme') || 'dark';
+      function apply(t){
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('pref-theme', t);
+        btn.textContent = t === 'dark' ? '🌙' : '☀️';
+      }
+      apply(saved);
+      btn.addEventListener('click', ()=> apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    })();
+  </script>
+</body>
+</html>
