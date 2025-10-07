@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kenjee Polanco - Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <div id="particles-js"></div>
   <main class="stage">
     <h1 class="visually-hidden">Kenjee Polanco Portfolio</h1>
 
@@ -89,5 +91,138 @@
         </a></span>
     </div>
   </footer>
+
+  <script>
+    // Initialize particles with configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 50,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#34a0ff"
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000"
+          }
+        },
+        opacity: {
+          value: 0.3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#34a0ff",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+    // Update particles color based on theme
+    function updateParticlesTheme() {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const particleColor = theme === 'light' ? '#0f172a' : '#34a0ff';
+      const canvas = document.querySelector('#particles-js canvas');
+      if (canvas && window.pJSDom && window.pJSDom[0]) {
+        window.pJSDom[0].pJS.particles.color.value = particleColor;
+        window.pJSDom[0].pJS.particles.line_linked.color = particleColor;
+        // Make particles more visible in light mode
+        if (theme === 'light') {
+          window.pJSDom[0].pJS.particles.opacity.value = 0.6;
+          window.pJSDom[0].pJS.particles.line_linked.opacity = 0.4;
+        } else {
+          window.pJSDom[0].pJS.particles.opacity.value = 0.3;
+          window.pJSDom[0].pJS.particles.line_linked.opacity = 0.2;
+        }
+        window.pJSDom[0].pJS.fn.particlesRefresh();
+      }
+    }
+
+    // Initialize particles with current theme on page load
+    setTimeout(updateParticlesTheme, 100);
+
+    // Listen for theme changes
+    const observer = new MutationObserver(updateParticlesTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  </script>
 </body>
 </html>
